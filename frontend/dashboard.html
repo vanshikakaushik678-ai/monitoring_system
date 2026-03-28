@@ -1,18 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Dashboard</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - MonitorSys</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">MonitorSys</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html" class="active">Dashboard</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <h1>💻 Monitoring Dashboard</h1>
-  <button onclick="logout()">Logout</button>
-</header>
+  <section class="container dashboard-section">
+    <h1>Dashboard</h1>
 
-<div id="logs"></div>
+    <div class="cards">
+      <div class="card">
+        <h3>Total Devices</h3>
+        <p id="totalDevices">3</p>
+      </div>
+      <div class="card">
+        <h3>Online Devices</h3>
+        <p id="onlineDevices" class="status online">2</p>
+      </div>
+      <div class="card">
+        <h3>Offline Devices</h3>
+        <p id="offlineDevices" class="status offline">1</p>
+      </div>
+    </div>
 
-<script src="script.js"></script>
+    <h2>Device Status Chart</h2>
+    <canvas id="deviceChart"></canvas>
+
+    <h2>Recent Alerts</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Device</th>
+          <th>Time</th>
+          <th>Alert</th>
+        </tr>
+      </thead>
+      <tbody id="alertsTable">
+        <tr>
+          <td>Device 2</td>
+          <td>14:30</td>
+          <td>Offline</td>
+        </tr>
+        <tr>
+          <td>Device 3</td>
+          <td>14:32</td>
+          <td>Temperature High</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 MonitorSys. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/dashboard.js"></script>
 </body>
 </html>
